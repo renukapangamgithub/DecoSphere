@@ -1,8 +1,5 @@
-// In ExploreSection.jsx, don't import Router
-// Just import necessary components
-
 import React from 'react';
-import { Link } from 'react-router-dom'; // For navigation links
+import { Link } from 'react-router-dom'; 
 import './ExploreSection.css';
 
 function ExploreSection() {

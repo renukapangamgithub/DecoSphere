@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // useNavigate for redirection
-import axios from 'axios'; // Import axios for HTTP requests
-import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS file for Toastify
+import { Link, useNavigate } from 'react-router-dom'; 
+import axios from 'axios'; 
+import { ToastContainer, toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 import './Signup.css';
 
 const Signup = () => {
@@ -10,21 +10,21 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
 
-  // Handle signup form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (password !== confirmPassword) {
       toast.error("Passwords don't match. Please try again.", {
-        autoClose: 3000, // Close the error toast after 3 seconds
+        autoClose: 3000, 
       });
       return;
     }
 
     try {
-      // Make the API request to backend for user registration
+
       const response = await axios.post('http://localhost:4000/api/auth/signup', {
         name,
         email,
@@ -33,18 +33,18 @@ const Signup = () => {
 
       if (response.status === 201) {
         toast.success('Account created successfully!', {
-          autoClose: 3000, // Close the success toast after 3 seconds
+          autoClose: 3000, 
         });
 
-        // Redirect to login page after a delay
+
         setTimeout(() => {
-          navigate('/login'); // Redirect to login page after the toast
-        }, 3000); // Wait for 3 seconds before redirecting
+          navigate('/login'); 
+        }, 3000);
       }
     } catch (error) {
       console.error('Error during signup:', error);
       toast.error('Error creating account. Please try again later.', {
-        autoClose: 3000, // Close the error toast after 3 seconds
+        autoClose: 3000,
       });
     }
   };

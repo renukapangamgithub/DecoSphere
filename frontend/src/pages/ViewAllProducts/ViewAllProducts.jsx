@@ -4,18 +4,18 @@ import './ViewAllProducts.css';
 
 const ViewAllProducts = () => {
   const [scrolling, setScrolling] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0); // To store the last scroll position
-  const [scrollDirection, setScrollDirection] = useState(0); // To track the scroll direction (1 for up, -1 for down)
+  const [lastScrollY, setLastScrollY] = useState(0); 
+  const [scrollDirection, setScrollDirection] = useState(0); 
 
-  // Track scroll event to toggle "scrolled" class and scroll direction
+  
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    // Determine if the user is scrolling up or down
+    
     if (currentScrollY > lastScrollY) {
-      setScrollDirection(-1); // Scrolling down
+      setScrollDirection(-1); 
     } else {
-      setScrollDirection(1); // Scrolling up
+      setScrollDirection(1); 
     }
 
     setLastScrollY(currentScrollY);
@@ -27,7 +27,7 @@ const ViewAllProducts = () => {
     }
   };
 
-  // Add scroll event listener
+ 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./saleSection.css";
 
-// Import images
 import bed1 from "../../assets/images/bed1.jpg";
 import chair from "../../assets/images/chair.jpg";
 import diningTable from "../../assets/images/dinning_table.jpg";
@@ -15,17 +14,17 @@ const SaleSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect screen size
+  
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Set isMobile to true on smaller screens
+      setIsMobile(window.innerWidth <= 768); 
     };
 
-    handleResize(); // Set initial state on mount
-    window.addEventListener("resize", handleResize); // Update on window resize
+    handleResize(); 
+    window.addEventListener("resize", handleResize); 
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -55,8 +54,8 @@ const SaleSection = () => {
           className="carousel"
           style={{
             transform: isMobile
-              ? `translateX(-${100 * currentIndex}%)` // For mobile, move one full item
-              : `translateX(-${33 * currentIndex}%)`, // For larger screens, move 3 items
+              ? `translateX(-${100 * currentIndex}%)` 
+              : `translateX(-${33 * currentIndex}%)`, 
           }}
         >
           {images.map((image, index) => (

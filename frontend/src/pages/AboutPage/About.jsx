@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./About.css";
-import image1 from "../../assets/images/image1.jpg"; // Replace with your image paths
+import image1 from "../../assets/images/image1.jpg"; 
 import image2 from "../../assets/images/image2.jpg";
 import image3 from "../../assets/images/image3.jpg";
 import image4 from "../../assets/images/image4.jpg";
@@ -8,21 +8,21 @@ import image5 from "../../assets/images/image5.jpg";
 import image6 from "../../assets/images/image6.jpg";
 
 const AboutPage = () => {
-  const [lastScrollY, setLastScrollY] = useState(0); // To track the previous scroll position
+  const [lastScrollY, setLastScrollY] = useState(0); 
 
   useEffect(() => {
     const handleScroll = () => {
       const images = document.querySelectorAll(".row-gallery-item");
-      const currentScrollY = window.scrollY; // Current scroll position
+      const currentScrollY = window.scrollY; 
 
-      // Determine the scroll direction (down or up)
+      
       const scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
 
       images.forEach((image) => {
         const rect = image.getBoundingClientRect();
         const imageOffset = parseInt(image.dataset.offset, 10); // Get the offset from dataset
 
-        // If scrolling down, move images forward
+
         if (scrollDirection === "down") {
           if (rect.left < window.innerWidth && rect.right > 0) {
             image.style.transform = `translateX(-50px)`; // Move forward a bit
@@ -32,7 +32,7 @@ const AboutPage = () => {
             image.style.opacity = "0.3";
           }
         } else if (scrollDirection === "up") {
-          // If scrolling up, move images backward
+      
           if (rect.left < window.innerWidth && rect.right > 0) {
             image.style.transform = `translateX(50px)`; // Move backward a bit
             image.style.opacity = "1";
@@ -43,17 +43,17 @@ const AboutPage = () => {
         }
       });
 
-      // Update lastScrollY to the current scroll position
+      
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]); // Re-run the effect when scroll position changes
+  }, [lastScrollY]); 
 
   return (
     <div className="about-page">
@@ -106,7 +106,7 @@ const AboutPage = () => {
         />
       </div>
 
-      {/* New Section Below Images */}
+     
       <div className="additional-content">
         <h1>Discover More Designs</h1>
         <p>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import axios for making HTTP requests
-import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS file for Toastify
+import axios from "axios"; 
+import { ToastContainer, toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
 import "./Contact.css";
 
 const Contact = () => {
@@ -19,14 +19,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Make a POST request to the backend contact route
+     
       const response = await axios.post("http://localhost:4000/api/contact", formData);
 
-      // If successful, show success toast
+      
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" }); // Clear the form
     } catch (error) {
-      // If error, show failure toast
+      
       toast.error("Something went wrong. Please try again.");
     }
   };
@@ -77,7 +77,7 @@ const Contact = () => {
         </form>
       </div>
 
-      {/* ToastContainer to render toast notifications */}
+      
       <ToastContainer />
     </div>
   );

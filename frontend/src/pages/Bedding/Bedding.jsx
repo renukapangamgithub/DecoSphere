@@ -10,19 +10,19 @@ const Bedding = () => {
       name: "Luxury Bed Set",
       description: "A premium quality bedding set made from soft, breathable fabric.",
       price: "$199.99",
-      image: image7, // Use the imported image
+      image: image7,
     },
     {
       name: "Cotton Pillow",
       description: "Soft and supportive cotton pillows for a good night's sleep.",
       price: "$29.99",
-      image: image8, // Use the imported image
+      image: image8, 
     },
     {
       name: "Comforter Set",
       description: "A cozy comforter set designed to keep you warm throughout the night.",
       price: "$89.99",
-      image: image9, // Use the imported image
+      image: image9,
     },
   ];
 

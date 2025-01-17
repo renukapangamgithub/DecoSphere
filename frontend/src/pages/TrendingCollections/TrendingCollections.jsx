@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'phosphor-react';
 
-import './TrendingCollections.css'; // Import the CSS
+import './TrendingCollections.css'; 
 
-// Importing images
 import image1 from '../../assets/images/image1.jpg';
 import image2 from '../../assets/images/image2.jpg';
 import image3 from '../../assets/images/image3.jpg';
@@ -33,7 +32,7 @@ const TrendingCollections = () => {
     );
   };
 
-  // Calculate the next image index for the small image (next in the array)
+
   const nextImageIndex = currentImageIndex === collections.length - 1 ? 0 : currentImageIndex + 1;
 
   return (
@@ -73,7 +72,6 @@ const TrendingCollections = () => {
         </div>
       </div>
 
-      {/* Arrow Controls Below the Small Image */}
   
     </div>
   );

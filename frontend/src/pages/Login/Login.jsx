@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext'; 
-import { toast } from 'react-toastify';  // Import the toast function
-import 'react-toastify/dist/ReactToastify.css';  // Import styles
+import { toast } from 'react-toastify';  
+import 'react-toastify/dist/ReactToastify.css'; 
 import './Login.css';
 
 const Login = () => {
@@ -16,25 +16,25 @@ const Login = () => {
     e.preventDefault();
 
     if (!email || !password) {
-      toast.error('Please fill in both fields!');  // Display error toast
+      toast.error('Please fill in both fields!');  
       return;
     }
 
     try {
       const response = await axios.post('http://localhost:4000/api/auth/login', { email, password });
 
-      console.log('Login Response:', response); // Debugging
+      console.log('Login Response:', response); 
 
       if (response.status === 200) {
         login(response.data.token);
-        toast.success('Login successful!');  // Display success toast
-        navigate('/'); // Redirect to home after successful login
+        toast.success('Login successful!');  
+        navigate('/'); 
       } else {
-        toast.error(response.data.message);  // Show error from server
+        toast.error(response.data.message);  
       }
     } catch (error) {
       console.error('Login Error:', error);
-      toast.error('Server error. Please try again later.');  // Show error if there's a server issue
+      toast.error('Server error. Please try again later.');  
     }
   };
 
