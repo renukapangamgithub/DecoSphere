@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaBars, FaTimes } from 'react-icons/fa'; // Removed FaSearch and FaShoppingCart
 import { AuthContext } from "../../context/AuthContext"; // Import the AuthContext
-import './navbar.css';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
