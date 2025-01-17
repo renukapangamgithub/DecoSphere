@@ -25,7 +25,7 @@ const Signup = () => {
 
     try {
 
-      const response = await axios.post('http://localhost:4000/api/auth/signup', {
+      const response = await axios.post('https://decosphere-backend1.onrender.com/api/auth/signup', {
         name,
         email,
         password
