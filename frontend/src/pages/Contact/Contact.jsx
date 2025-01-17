@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
     try {
      
-      const response = await axios.post("http://localhost:4000/api/contact", formData);
+      const response = await axios.post("https://decosphere-backend1.onrender.com/api/contact", formData);
 
       
       toast.success("Message sent successfully!");
