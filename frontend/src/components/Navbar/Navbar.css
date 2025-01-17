@@ -1,0 +1,170 @@
+.navbar {
+  background-color: #ffffff;
+  padding: 10px 20px; /* Reduced padding */
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Allow absolute positioning of the menu toggle */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%; /* Ensure full width */
+}
+
+.logo {
+  font-size: 1.5rem; /* Reduced font size */
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #555;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #007bff;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 15px; /* Reduced gap for more compact layout */
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn .icon {
+  font-size: 1.5rem; /* Reduced icon size */
+  color: #333;
+  transition: color 0.3s;
+}
+
+
+.icon-btn:hover .icon {
+  color: #007bff;
+}
+
+/* Logout Button Styling */
+.icon-btn.logout {
+  background-color: #000; /* Red background for logout */
+  color: white; /* White text color */
+  border: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon-btn.logout:hover {
+  background-color: #e60000; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.icon-btn.logout:active {
+  background-color: #000; /* Even darker red when clicked */
+  transform: scale(1); /* Reset zoom on click */
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px; /* Adjust for vertical alignment */
+  right: 10px; /* Align at the right edge */
+}
+
+.menu-toggle .icon {
+  font-size: 1.5rem; /* Smaller toggle menu icon */
+  color: #333;
+}
+
+/* Mobile Styles */
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Make nav-icons visible on mobile */
+  .nav-icons {
+    display: flex;
+    gap: 15px; /* Keep the gap between icons */
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 20px; /* Align the icons to the right */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .icon-btn {
+    margin-right: 20px; /* Adjusted margin for better spacing */
+  }
+
+  .logo {
+    font-size: 1.2rem; /* Smaller logo size for mobile */
+  }
+
+  .menu-toggle .icon {
+    font-size: 1.5rem; /* Smaller toggle menu icon */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-icons {
+    display: flex;
+  }
+}
